@@ -1,17 +1,82 @@
+:root{
+    --gray0:#ffffff;
+    --gray1:#ffffffe0;
+    --gray2:#ffffffa4;
+    --gray3:#ffffff8e;
+    --gray4:#4d4b4b1e;
+    --gray5:#222121d2;
+    --gray6:#000000;
 
+}
+.light{
+    --bg:var(--gray0);
+    --bg-nav:linear-gradient(to right, var(--gray1),var(--gray3));
+    --bg-dropdown:var(--gray0);
+    --text:var(--gray6);
+    color:var(--text) ;
+    background:var(--bg) ;
+
+}
+.dark{
+    --bg:var(--gray6);
+    --bg-nav:linear-gradient(to right, var(--gray5),var(--gray6));
+    --bg-dropdown:var(--gray6);
+    --text:var(--gray0);
+    color:var(--text) ;
+    background:var(--bg) ;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background: var(--bg);
+transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
 #main--container{
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    color: currentColor;
 }
+nav{
+    display: flex;
+    flex-direction: row; 
+justify-content: space-between;
+margin-bottom: 15px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+   
+}
+nav li{
+    padding: 10px;
+
+}
+#theme span{
+    margin-left: 7px;
+}
+nav span a::before{
+content: ' ';
+border: 2px solid var(--text);
+border-radius: 50%;
+width: 1rem;
+height: 1rem;
+display: inline-block;
+vertical-align: middle;
+margin-right: 5px;
+}
+
 a{
     touch-action: none;
     text-decoration: none;
-    color: black;
     font-family: monospace;
+    color: currentColor;
 }
 h1,h2{
     justify-content: left;
@@ -19,10 +84,20 @@ h1,h2{
     text-transform: capitalize;
 
 }
+main{
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 #bio--wrapper{
     display: flex;
     width: 50%;
     justify-content: space-between;
+    height: 100vh;
     
 }
 #bio--wrapper img{
@@ -59,7 +134,7 @@ h1,h2{
 }
 #project--wrapper a{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: black;
+    
 }
 #socials--wrapper span{
  justify-content: space-between;  
@@ -74,14 +149,17 @@ h1,h2{
         box-sizing: border-box;
         display: inline;
     }
+    #theme a{
+        display: block;}
     #bio--wrapper{
-        display: inline;
-        width: 50%;
+        display: flex;
+        width: 100%;
         justify-content: space-between;
         
     }
     img{
-        width: 60%;
+        display: none;
+    visibility: hidden;
     }
     #language--container{
         display: flex;
